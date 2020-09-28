@@ -1,6 +1,6 @@
-package labsheet4.exercise4;
+package labsheet4.exercise5;
 import javax.swing.*;
-import java.awt.Font;
+import java.awt.*;
 
 public class TestBook {
     public static void main(String[] args) {
@@ -25,7 +25,7 @@ public class TestBook {
         Book leastFave = new Book(title,price,ISBN,pages);
 
 
-        textArea.append(String.format("%-30s%-10s%-20s%-5s\n\n%-30s%-10.2f%-20s%d\n\n%-30s%-10.2f%-20s%d","Title","Price","ISBN","Pages",favouriteBook.getTitle(),favouriteBook.getPrice(),
+        textArea.append(String.format("%-30s%-10s%-35s%-5s\n\n%-30s%-10.2f%-35s%d\n\n%-30s%-10.2f%-35s%d","Title","Price","ISBN","Pages",favouriteBook.getTitle(),favouriteBook.getPrice(),
                 favouriteBook.getISBN(),favouriteBook.getPages(),leastFave.getTitle(),leastFave.getPrice(),leastFave.getISBN(),leastFave.getPages()));
 
              JOptionPane.showMessageDialog(null,textArea,"Book Data",JOptionPane.INFORMATION_MESSAGE);
