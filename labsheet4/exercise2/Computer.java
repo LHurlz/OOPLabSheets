@@ -1,4 +1,4 @@
-package labsheet3.exercise1;
+package labsheet4.exercise2;
 
 public class Computer {
     private String manufacturer;
@@ -8,22 +8,16 @@ public class Computer {
     private double price;
 
     public Computer(){
-        manufacturer="N/A";
-        type="N/A";
-        speed=0;
-        RAM=0;
-        price=0;
+        //this("N/A","N/A",0,0,0);
+     }
 
-    }
-
-    public Computer(String manufacturer,String type,double speed,int RAM,double price){
-        this.manufacturer=manufacturer;
-        this.type=type;
-        this.speed=speed;
-        this.RAM=RAM;
-        this.price=price;
-
-    }
+    public Computer(String manufacturer, String type, double speed, int RAM, double price){
+        setManufacturer(manufacturer);
+        setType(type);
+        setSpeed(speed);
+        setRAM(RAM);
+        setPrice(price);
+     }
 
     String getManufacturer(){
         return manufacturer;
@@ -54,15 +48,18 @@ public class Computer {
     }
 
     public void setSpeed(double speed){
-        this.speed=speed;
+        if(speed>0)
+            this.speed=speed;
     }
 
     public void setRAM(int RAM){
-        this.RAM=RAM;
+        if(RAM>0)
+            this.RAM=RAM;
     }
 
     public void setPrice(double price){
-        this.price=price;
+        if(price>0)
+            this.price=price;
     }
 
     public String toString(){
