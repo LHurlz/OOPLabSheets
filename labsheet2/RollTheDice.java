@@ -13,11 +13,6 @@ public class RollTheDice {
 
         while (ask.equals("yes")) {
 
-            //ask = JOptionPane.showInputDialog("Would you like to play another game of roll the dice? (yes or no)");
-
-           // if(ask.equals("no"))
-            //    break;
-
             result = rollTheDice();
 
 
@@ -45,7 +40,6 @@ public class RollTheDice {
 
     public static char rollTheDice() {
         double cpuRoll = 0, playerRoll = 0;
-        //int draws=0, cpuWins=0, playerWins=0;
 
         cpuRoll = (int) (Math.random() * 12) + 1;
 
@@ -58,12 +52,10 @@ public class RollTheDice {
 
         if (cpuRoll > playerRoll)
             return 'c';
-            //cpuWins++;
         else if (cpuRoll < playerRoll)
             return 'p';
-            //playerWins++;
         else
             return 'd';
-        //draws++;
+
     }
 }
