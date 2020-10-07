@@ -71,14 +71,6 @@ public class Animal {
 	//displaying the state of the objects attributes indirectly via the accessors
 	
 	public String toString() {
-		 /*String str = "Animal Type: " + getType() + "\nAnimal Weight: " + getWeight() +
-				      "\nAnimal Age: " + getAge() + "\nAnimal Continents: ";
-
-		 if(continents==null)
-				{
-				 str+="No continents specified";
-				 return str;
-				}*/
 
 		String str = "Animal Type: " + getType() + "\nAnimal Weight: ";
 		getWeight();
