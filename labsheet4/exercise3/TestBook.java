@@ -11,7 +11,7 @@ public class TestBook {
 
         Book b2 = new Book("The Davinci Code",19.99,"3452617232",348);
 
-        output+="\n\nCalling the multi-argument constructor.  Second book details are \n" + b2.toString();
+        output+="\nCalling the multi-argument constructor.  Second book details are \n" + b2.toString();
 
         JOptionPane.showMessageDialog(null,output,"Book Data",JOptionPane.INFORMATION_MESSAGE);
     }
