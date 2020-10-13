@@ -30,35 +30,53 @@ public class TestCollegeApp {
 
         System.out.println("Total students in the institute: " + itTralee.getTotalStudents());
 
-        int mediaSub=0, compSub=0;
+        System.out.println("\nMoving Jake to Creative Media department!");
+
+        int mediaSub=-1, compSub=-1;
         Student[] studentSearch;
 
         for(int i = 0; i<departments.length; i++) {
             if (departments[i] != null) {
-                if (departments[i].getName().equals("Computing") || departments[i].getName().equals("Creative Media")) {
-                    if (departments[i].getName().equals("Computing"))
+                if (departments[i].getName().equals("Computing"))
                         compSub=i;
-                    else
+                if(departments[i].getName().equals("Creative Media"))
                         mediaSub=i;
-                }
             }
         }
 
-        studentSearch=departments[compSub].getStudents();
+        if(compSub!=-1 && mediaSub!=-1) {
 
-        for(int j=0; j<studentSearch.length; j++){
-            if(studentSearch[j]!=null){
-                if(studentSearch[j].getId()==154345){
-                    System.out.println("\n\nJake Found!");
+            studentSearch=departments[compSub].getStudents();
 
-                    studentSearch[j].setDepartment("Creative Media");
+            for(int j=0; j<studentSearch.length; j++){
+                if(studentSearch[j]!=null){
+                    if(studentSearch[j].getId()==154345){
+                        System.out.println("\n\nJake Found!");
 
-                    computingStudents[0]=null;
-                    mediaStudents[2]=studentSearch[j];
+                        studentSearch[j].setDepartment("Creative Media");
 
+                        //computingStudents[0]=null;
+                        //mediaStudents[2]=studentSearch[j];
+
+                        departments[mediaSub].getStudents()[2] = studentSearch[j];
+                        studentSearch[j] = null;
+
+
+
+
+                        break;
+
+                    }
+
+                    else
+                        System.out.println("\n\nJake Not Found!");
                 }
             }
+
+
         }
+
+
 
 
         System.out.println("\n\n"+itTralee.toString());
