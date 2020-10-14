@@ -17,7 +17,7 @@ public class Department {
 
     public void setStudents(Student students[]){
         if(students!=null)
-            this.students = Arrays.copyOf(students,students.length);
+            this.students = students;
     }
 
     public String getName(){
@@ -25,7 +25,7 @@ public class Department {
     }
 
     public Student[] getStudents(){
-        return Arrays.copyOf(students,students.length);
+        return students;
     }
 
     public String toString(){

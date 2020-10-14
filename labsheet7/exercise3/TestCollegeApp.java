@@ -55,17 +55,8 @@ public class TestCollegeApp {
 
                         studentSearch[j].setDepartment("Creative Media");
 
-                        //computingStudents[0]=null;
-                        //mediaStudents[2]=studentSearch[j];
-
-                        departments[mediaSub].getStudents()[2] = studentSearch[j];
-                        studentSearch[j] = null;
-
-
-
-
-                        break;
-
+                        mediaStudents[2]=studentSearch[j];
+                        computingStudents[0]=null;
                     }
 
                     else
