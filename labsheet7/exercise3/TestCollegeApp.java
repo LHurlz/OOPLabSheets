@@ -67,9 +67,6 @@ public class TestCollegeApp {
 
         }
 
-
-
-
         System.out.println("\n\n"+itTralee.toString());
 
     }
