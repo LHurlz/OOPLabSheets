@@ -1,4 +1,4 @@
-package labsheet11.sampleprogram2b;
+package labsheet11.exercise2;
 
 //TestArrayList.java
 /*A driver (test) class that contains the main() method for
@@ -7,13 +7,15 @@ an array-list is used for maintaining a collection of LineItem objects and
 a separate collection of Product objects. The driver is also testing out
 the functionality of the ArrayList class*/
 
+import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 
 public class TestArrayList{
     public static void main(String[] args) {
 
-        System.out.println("\n\nCreating two array-lists, one to maintain a collection of products,\n" +
+        /*System.out.println("\n\nCreating two array-lists, one to maintain a collection of products,\n" +
                 "the other to maintain a collection of line-items ...\n");
         //Create an array-list of LineItem objects
         ArrayList<LineItem> allLineItems = new ArrayList<LineItem>();
@@ -128,7 +130,79 @@ public class TestArrayList{
         System.out.println("\n\nDisplaying the state of all products ...\n");
         for (Product p : allProducts)
             if (p != null)
-                System.out.println(p);
+                System.out.println(p);*/
 
+        // Create Products
+        Product p1 = new Product(1, "Red Pen", "This is a red pen");
+        Product p2 = new Product(2, "Pencil", "This is a pencil");
+        Product p3 = new Product(3, "Ruler", "This is a ruler");
+        Product p4 = new Product(4, "Black Marker", "This is a black permanent marker");
+        Product p5 = new Product(5, "Compass", "This is a mathematical compass");
+        Product p6 = new Product(6, "Protractor", "This is a protractor");
+        Product p7 = new Product(7, "Refill Pad", "This is a 150 page refill pad");
+        Product p8 = new Product(8, "Eraser", "This is an eraser");
+        Product p9 = new Product(9, "Tippex", "This is tippex");
+        Product p10 = new Product(10, "Stapler", "This is a stapler");
+        Product p11 = new Product(11, "Black Pen","This is a black pen");
+        Product p12 = new Product(12, "Blue Pen","This is a blue pen");
+        Product p13 = new Product(13, "Red Marker", "This is a red permanent marker");
+        Product p14 = new Product(14, "Blue Marker", "This is a blue permanent marker");
+        Product p15 = new Product(15, "Calculator", "This is a Casio scientific calculator");
+
+        //Create an array-list of Product objects
+        ArrayList<Product> allProducts = new ArrayList<Product>(Arrays.asList(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15));
+
+        String inputAsString = JOptionPane.showInputDialog("1. Add a Product\n2. Amend a Product\n3. Remove a Product\n4. View all Products" +
+                                                            "\n5. Quit\n\nPlease enter your choice");
+        int input = Integer.parseInt(inputAsString);
+
+        while(input<0 || input>5){
+            input=Integer.parseInt(JOptionPane.showInputDialog("1. Add a Product\n2. Amend a Product\n3. Remove a Product\n4. View all Products" +
+                    "\n5. Quit\n\nInvalid choice entered! Must be between 1-5 inclusive!"));
+        }
+
+        if(input==1)
+            addProduct(allProducts);
+
+        if(input==4)
+            viewProducts(allProducts);
+
+    }
+
+    public static void addProduct(ArrayList<Product> allProducts){
+        int id = Integer.parseInt(JOptionPane.showInputDialog("Please enter the product id"));
+        String name = JOptionPane.showInputDialog("Please enter the product name");
+        String desc = JOptionPane.showInputDialog("Please enter the product description");
+
+        allProducts.add(new Product(id,name,desc));
+
+        JOptionPane.showMessageDialog(null,"Product created and added to array list");
+
+        String inputAsString = JOptionPane.showInputDialog("1. Add a Product\n2. Amend a Product\n3. Remove a Product\n4. View all Products" +
+                "\n5. Quit\n\nPlease enter your choice");
+        int input = Integer.parseInt(inputAsString);
+
+        while(input<0 || input>5){
+            input=Integer.parseInt(JOptionPane.showInputDialog("1. Add a Product\n2. Amend a Product\n3. Remove a Product\n4. View all Products" +
+                    "\n5. Quit\n\nInvalid choice entered! Must be between 1-5 inclusive!"));
+        }
+
+        if(input==1)
+            addProduct(allProducts);
+
+        if(input==4)
+            viewProducts(allProducts);
+    }
+
+    public static void viewProducts(ArrayList<Product> allProducts){
+        String str="";
+
+        for(Product p:allProducts){
+            if(p!=null){
+                str+=p+"\n";
+            }
+        }
+
+        JOptionPane.showMessageDialog(null,str,"List of all Products",JOptionPane.INFORMATION_MESSAGE);
     }
 }
