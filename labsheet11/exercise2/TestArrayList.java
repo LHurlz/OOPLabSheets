@@ -164,6 +164,9 @@ public class TestArrayList{
         if(input==1)
             addProduct(allProducts);
 
+        if(input==2)
+            amendProduct(allProducts);
+
         if(input==4)
             viewProducts(allProducts);
 
@@ -190,8 +193,32 @@ public class TestArrayList{
         if(input==1)
             addProduct(allProducts);
 
+        if(input==2)
+            amendProduct(allProducts);
+
         if(input==4)
             viewProducts(allProducts);
+    }
+
+    public static void amendProduct(ArrayList<Product> allProducts){
+        String input = JOptionPane.showInputDialog("Please enter the name of the product you wish to amend");
+        String relatedItems="";
+        ArrayList<Product> matchedProducts = new ArrayList<Product>();
+
+        for(Product p : allProducts){
+            if(p!=null && p.getName().toLowerCase().contains(input)){
+                matchedProducts.add(p);
+            }
+        }
+
+        int amend = Integer.parseInt(JOptionPane.showInputDialog("The following products matched your search phrase\n\n"+matchedProducts.toString()+"\n\n\n" +
+                                                "Enter the id of the one you want to amend"));
+
+        for(Product p : matchedProducts){
+            if(p!=null && p.getId()==amend){
+                //INPUT FOR AMENDING//
+            }
+        }
     }
 
     public static void viewProducts(ArrayList<Product> allProducts){
@@ -204,5 +231,23 @@ public class TestArrayList{
         }
 
         JOptionPane.showMessageDialog(null,str,"List of all Products",JOptionPane.INFORMATION_MESSAGE);
+
+        String inputAsString = JOptionPane.showInputDialog("1. Add a Product\n2. Amend a Product\n3. Remove a Product\n4. View all Products" +
+                "\n5. Quit\n\nPlease enter your choice");
+        int input = Integer.parseInt(inputAsString);
+
+        while(input<0 || input>5){
+            input=Integer.parseInt(JOptionPane.showInputDialog("1. Add a Product\n2. Amend a Product\n3. Remove a Product\n4. View all Products" +
+                    "\n5. Quit\n\nInvalid choice entered! Must be between 1-5 inclusive!"));
+        }
+
+        if(input==1)
+            addProduct(allProducts);
+
+        if(input==2)
+            amendProduct(allProducts);
+
+        if(input==4)
+            viewProducts(allProducts);
     }
 }
