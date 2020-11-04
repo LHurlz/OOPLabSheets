@@ -1,4 +1,4 @@
-package labsheet11.sampleprogram2;
+package labsheet11.sampleprogram2b;
 
 //LineItem.java
 /*A simple instantiable class definition for an line-item which also demonstrates

@@ -1,4 +1,4 @@
-package labsheet11.sampleprogram2;
+package labsheet11.sampleprogram2b;
 
 //TestArrayList.java
 /*A driver (test) class that contains the main() method for
@@ -8,8 +8,6 @@ a separate collection of Product objects. The driver is also testing out
 the functionality of the ArrayList class*/
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 public class TestArrayList{
     public static void main(String[] args) {
@@ -116,16 +114,5 @@ public class TestArrayList{
         for (LineItem l : allLineItems)
             if (l != null)
                 System.out.println(l);
-
-        /*for(Product p: allProducts)
-            if(p!=null && p.getName().equals("Ruler"))
-                allProducts.remove(p);
-
-        for(Product p: allProducts)
-            if(p!=null)
-                System.out.println(p);*/
-
-
     }
-
 }

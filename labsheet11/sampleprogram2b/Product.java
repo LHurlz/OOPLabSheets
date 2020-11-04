@@ -1,4 +1,4 @@
-package labsheet11.sampleprogram2;
+package labsheet11.sampleprogram2b;
 
 //Product.java
 /*A simple instantiable class definition for a Product*/
