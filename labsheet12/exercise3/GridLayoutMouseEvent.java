@@ -89,15 +89,15 @@ public class GridLayoutMouseEvent extends JFrame implements MouseListener {
              JOptionPane.showMessageDialog(null, "Game Over", "Game Over!!",
                      JOptionPane.INFORMATION_MESSAGE);
 
-             for(int i=0; i< jlabels.length; i++){
-                 clickEventCounter=0;
-                 gameOver=false;
+             result=-1;
+
+             for(int i=0; i<9; i++){
                  jlabels[i].setText(""+(i+1));
                  jlabels[i].setIcon(null);
              }
-         }
 
-
+             clickEventCounter=0;
+          }
     }
 
 
@@ -124,31 +124,86 @@ public class GridLayoutMouseEvent extends JFrame implements MouseListener {
     }
 
     public int checkForWinner(){
-        /*I have omitted about 50 lines of code here which check to see whether
-        there was a winner and returns the winner. Returning 1 means player 1 wins,
-        returning 2 means player 2 wins and returning 0 means neither player wins.
-        This is for an exercise that follows this sample program*/
-
         for(int i=0; i<jlabels.length; i++){
-            if(jlabels[i]!=null) {
-                if (jlabels[i].getIcon() == xImage && (jlabels[i+1]!=null&&jlabels[i + 1].getIcon() == xImage) && (jlabels[i+2]!=null&&jlabels[i + 1].getIcon() == xImage)) {
-                    return 1;
-
-                }
-                else if(jlabels[i].getIcon() == oImage && (jlabels[i+1]!=null&&jlabels[i + 1].getIcon() == oImage) && (jlabels[i+2]!=null&&jlabels[i + 1].getIcon() == oImage))
-                    return 2;
+            if(jlabels[0]!=null && jlabels[0].getIcon()==xImage){
+                if(jlabels[1]!=null && jlabels[1].getIcon()==xImage)
+                    if(jlabels[2]!=null && jlabels[2].getIcon()==xImage)
+                        return 1;
+            }
+            if(jlabels[3]!=null && jlabels[3].getIcon()==xImage){
+                if(jlabels[4]!=null && jlabels[4].getIcon()==xImage)
+                    if(jlabels[5]!=null && jlabels[5].getIcon()==xImage)
+                        return 1;
+            }
+            if(jlabels[6]!=null && jlabels[6].getIcon()==xImage){
+                if(jlabels[7]!=null && jlabels[7].getIcon()==xImage)
+                    if(jlabels[8]!=null && jlabels[8].getIcon()==xImage)
+                        return 1;
             }
         }
 
         for(int i=0; i<jlabels.length; i++){
-            if(jlabels[i]!=null) {
-                if(jlabels[i].getIcon() == xImage && (jlabels[i+3]!=null && jlabels[i + 3].getIcon() == xImage) && (jlabels[i+6]!=null && jlabels[i + 6].getIcon() == xImage)) {
-                    return 1;
-
-                }
-                else if(jlabels[i].getIcon() == oImage && (jlabels[i+3]!=null && jlabels[i + 3].getIcon() == oImage) && (jlabels[i+6]!=null && jlabels[i + 6].getIcon() == oImage))
-                    return 2;
+            if(jlabels[0]!=null && jlabels[0].getIcon()==oImage){
+                if(jlabels[1]!=null && jlabels[1].getIcon()==oImage)
+                    if(jlabels[2]!=null && jlabels[2].getIcon()==oImage)
+                        return 2;
             }
+            if(jlabels[3]!=null && jlabels[3].getIcon()==oImage){
+                if(jlabels[4]!=null && jlabels[4].getIcon()==oImage)
+                    if(jlabels[5]!=null && jlabels[5].getIcon()==oImage)
+                        return 2;
+            }
+            if(jlabels[6]!=null && jlabels[6].getIcon()==oImage){
+                if(jlabels[7]!=null && jlabels[7].getIcon()==oImage)
+                    if(jlabels[8]!=null && jlabels[8].getIcon()==oImage)
+                        return 2;
+            }
+        }
+
+        for(int i=0; i<jlabels.length; i++){
+            if(jlabels[0]!=null && jlabels[0].getIcon()==xImage){
+                if(jlabels[3]!=null && jlabels[3].getIcon()==xImage)
+                    if(jlabels[6]!=null && jlabels[6].getIcon()==xImage)
+                        return 1;
+            }
+            if(jlabels[1]!=null && jlabels[1].getIcon()==xImage){
+                if(jlabels[4]!=null && jlabels[4].getIcon()==xImage)
+                    if(jlabels[7]!=null && jlabels[7].getIcon()==xImage)
+                        return 1;
+            }
+            if(jlabels[2]!=null && jlabels[2].getIcon()==xImage){
+                if(jlabels[5]!=null && jlabels[5].getIcon()==xImage)
+                    if(jlabels[8]!=null && jlabels[8].getIcon()==xImage)
+                        return 1;
+            }
+        }
+
+        for(int i=0; i<jlabels.length; i++){
+            if(jlabels[0]!=null && jlabels[0].getIcon()==oImage){
+                if(jlabels[3]!=null && jlabels[3].getIcon()==oImage)
+                    if(jlabels[6]!=null && jlabels[6].getIcon()==oImage)
+                        return 2;
+            }
+            if(jlabels[1]!=null && jlabels[1].getIcon()==oImage){
+                if(jlabels[4]!=null && jlabels[4].getIcon()==oImage)
+                    if(jlabels[7]!=null && jlabels[7].getIcon()==oImage)
+                        return 2;
+            }
+            if(jlabels[2]!=null && jlabels[2].getIcon()==oImage){
+                if(jlabels[5]!=null && jlabels[5].getIcon()==oImage)
+                    if(jlabels[8]!=null && jlabels[8].getIcon()==oImage)
+                        return 2;
+            }
+        }
+
+        if((jlabels[0].getIcon()==xImage && jlabels[4].getIcon()==xImage && jlabels[8].getIcon()==xImage) ||
+                (jlabels[2].getIcon()==xImage && jlabels[4].getIcon()==xImage && jlabels[6].getIcon()==xImage)){
+            return 1;
+        }
+
+        if((jlabels[0].getIcon()==oImage && jlabels[4].getIcon()==oImage && jlabels[8].getIcon()==oImage) ||
+                (jlabels[2].getIcon()==oImage && jlabels[4].getIcon()==oImage && jlabels[6].getIcon()==oImage)){
+            return 2;
         }
 
         return 0;
