@@ -128,6 +128,29 @@ public class GridLayoutMouseEvent extends JFrame implements MouseListener {
         there was a winner and returns the winner. Returning 1 means player 1 wins,
         returning 2 means player 2 wins and returning 0 means neither player wins.
         This is for an exercise that follows this sample program*/
+
+        for(int i=0; i<jlabels.length; i++){
+            if(jlabels[i]!=null) {
+                if (jlabels[i].getIcon() == xImage && (jlabels[i+1]!=null&&jlabels[i + 1].getIcon() == xImage) && (jlabels[i+2]!=null&&jlabels[i + 1].getIcon() == xImage)) {
+                    return 1;
+
+                }
+                else if(jlabels[i].getIcon() == oImage && (jlabels[i+1]!=null&&jlabels[i + 1].getIcon() == oImage) && (jlabels[i+2]!=null&&jlabels[i + 1].getIcon() == oImage))
+                    return 2;
+            }
+        }
+
+        for(int i=0; i<jlabels.length; i++){
+            if(jlabels[i]!=null) {
+                if(jlabels[i].getIcon() == xImage && (jlabels[i+3]!=null && jlabels[i + 3].getIcon() == xImage) && (jlabels[i+6]!=null && jlabels[i + 6].getIcon() == xImage)) {
+                    return 1;
+
+                }
+                else if(jlabels[i].getIcon() == oImage && (jlabels[i+3]!=null && jlabels[i + 3].getIcon() == oImage) && (jlabels[i+6]!=null && jlabels[i + 6].getIcon() == oImage))
+                    return 2;
+            }
+        }
+
         return 0;
     }
 }
