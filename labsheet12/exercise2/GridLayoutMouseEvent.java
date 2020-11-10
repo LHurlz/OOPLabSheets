@@ -29,12 +29,11 @@ public class GridLayoutMouseEvent extends JFrame{
         GridLayout layout = new GridLayout(4, 4, 0,0);
         setLayout(layout);
 
-        //jlabels = new JLabel[16];
         jlabels = new ArrayList<>(16);
 
-        for (int i = 0; i < jlabels.size(); i++) {
+        for (int i = 0; i < 16; i++) {
             jlabels.add(new JLabel(""+ (i+1),SwingConstants.CENTER));
-            jlabels.get(i).setBorder(BorderFactory.createEtchedBorder(Color.BLACK, Color.GREEN));
+            jlabels.get(i).setBorder(BorderFactory.createEtchedBorder(Color.RED, Color.GREEN));
             add(jlabels.get(i));
             jlabels.get(i).addMouseListener(new MouseAdapter() {
                 public void mouseClicked(MouseEvent e) {
@@ -54,8 +53,6 @@ public class GridLayoutMouseEvent extends JFrame{
                                 JOptionPane.ERROR_MESSAGE);
                         clickEventCounter--;
                     }
-
-
 
                     if(clickEventCounter>=5&&clickEventCounter<=16) {
                         result = checkForWinner();
